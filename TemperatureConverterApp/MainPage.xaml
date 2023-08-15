@@ -3,22 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TemperatureConverterApp.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+    <StackLayout BackgroundColor="White">
+        
+        
+        <Label Text="Temperature Converter" FontSize="30" Padding="30, 30, 30 ,30" TextColor="Black" FontAttributes="Bold"/>
+        <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="0">
+            <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="0">
+                <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="0">
+                    <Label Text="Degrees" FontSize="15" Padding="30,30,30,30" TextColor="Gray"/>
+                    <Entry x:Name="degreesValue" Placeholder="Value" PlaceholderColor="Gray" Margin="30, 0,0,0"  />
+                </StackLayout>
+                <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="5">
+                    <Label Text="Type" FontSize="15" Padding="100,30,30,30" TextColor="Gray"/>
+                    <Picker x:Name="typePicker" TextColor="Gray" Title="Type" TitleColor="Gray" Margin="100,0,0,0">
+                        <Picker.Items>
+                            <x:String>Celcius</x:String>
+                            <x:String>Farenheit</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="5">
+                <Label Text="Result" FontSize="15" Padding="30,30,30,30" TextColor="Gray"/>
+                <Entry x:Name ="ResultEntry" Margin="30, 0,0,0" TextColor="Gray" />
+            </StackLayout>
+        </StackLayout>
+
+        <Button Text="Convert" Clicked="Convert"/>
     </StackLayout>
 
 </ContentPage>
